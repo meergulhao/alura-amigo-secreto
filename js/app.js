@@ -7,9 +7,15 @@ function adicionar() {
 
     if(amigo.value == '') {
         alert('Informe o nome da pessoa.');
-    } else {
-        amigosAdicionados.push(` ${amigo.value}`);
+        return;
     }
+
+    if(amigosAdicionados.includes(` ${amigo.value}`)) {
+        alert(`${amigo.value} já está na lista!`);
+        return;
+    }
+
+    amigosAdicionados.push(` ${amigo.value}`);
 
     let listaAmigos = document.querySelector('#lista-amigos');
     // Na aula não foi criado um array, adicionaram os nomes concatenando caso a lista não esteja vazia
